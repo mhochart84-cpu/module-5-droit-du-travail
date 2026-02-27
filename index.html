@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MODULE 5 – ROMPRE UN CONTRAT DE TRAVAIL | AFRITECH</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink-deep:    #8B1A5A;
+    --pink-main:    #C0287A;
+    --pink-mid:     #D4449A;
+    --pink-light:   #E880C0;
+    --pink-pale:    #F8C8E4;
+    --pink-bg:      #FDF0F8;
+    --pink-soft:    #F5D8ED;
+    --fuchsia:      #E040A0;
+    --rose-white:   #FFF5FB;
+    --white:        #FFFFFF;
+    --text-dark:    #2C0A1E;
+    --text-mid:     #5A1A3A;
+    --text-light:   #8A4A6A;
+    --grey-border:  #E0B8D0;
+    --red-alert:    #B83232;
+    --blue-link:    #1A4A7A;
+    --green-ok:     #2E6B3E;
+    --amber:        #C07020;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(150deg, #C0287A 0%, #D4449A 30%, #E880C0 60%, #F8C8E4 100%);
+    color: var(--text-dark);
+    font-size: 13px;
+    line-height: 1.55;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* ─── PAGE ─── */
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--pink-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(192,40,122,0.22);
+    overflow: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: linear-gradient(150deg, #6A0A40 0%, #C0287A 50%, #D4449A 100%);
+    padding: 28px 36px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: -20px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .module-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .header-title-fr {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .header-title-en {
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+
+  .header-title-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 5px;
+    font-style: italic;
+  }
+
+  .header-title-ar {
+    font-size: 14px;
+    color: rgba(255,255,255,0.58);
+    margin-top: 4px;
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    padding: 4px 12px;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .header-bar {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    margin-top: 18px;
+  }
+
+  /* ─── SCENARIO BANNER ─── */
+  .scenario-banner {
+    background: var(--text-dark);
+    padding: 11px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .scenario-icon {
+    width: 30px; height: 30px;
+    background: var(--pink-mid);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .scenario-text {
+    color: rgba(255,255,255,0.78);
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  .scenario-text strong {
+    color: var(--pink-pale);
+    font-size: 12.5px;
+  }
+
+  /* ─── CONTENT ─── */
+  .content {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: linear-gradient(180deg, var(--pink-bg) 0%, var(--white) 80%);
+  }
+
+  /* ─── 4 THEMES NUMBERED ─── */
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .step-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    border: 1px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 12px 18px;
+    box-shadow: 0 2px 6px rgba(192,40,122,0.07);
+  }
+
+  .step-circle {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink-main), var(--fuchsia));
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(192,40,122,0.3);
+  }
+
+  .step-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .step-left {}
+
+  .step-fr {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14.5px;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.2;
+  }
+
+  .step-en {
+    font-size: 11px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1px;
+  }
+
+  .step-ar {
+    font-size: 14px;
+    color: var(--pink-main);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  /* ─── QUICK ACCESS ─── */
+  .quick-access {
+    background: var(--pink-soft);
+    border: 1px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 14px 20px;
+  }
+
+  .qa-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--pink-deep);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .qa-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .qa-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border-radius: 8px;
+    padding: 9px 12px;
+    border: 1px solid var(--grey-border);
+  }
+
+  .qa-item-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink-main), var(--fuchsia));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .qa-item-text strong {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--pink-deep);
+    display: block;
+  }
+
+  .qa-item-text span {
+    font-size: 9.5px;
+    color: var(--text-light);
+  }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--pink-light);
+  }
+
+  .section-number {
+    background: var(--pink-main);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-number.alert-num { background: var(--red-alert); }
+
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--pink-deep);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .section-title.alert-title { color: var(--red-alert); }
+
+  /* ─── ANSWER BOX ─── */
+  .answer-box {
+    background: linear-gradient(135deg, #6A0A40 0%, #C0287A 100%);
+    border-radius: 10px;
+    padding: 18px 22px;
+    border-left: 5px solid var(--pink-pale);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .answer-box::after {
+    content: '§';
+    position: absolute;
+    right: 16px; top: 6px;
+    font-size: 70px;
+    color: rgba(255,255,255,0.04);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+  }
+
+  .answer-verdict {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .answer-box p {
+    color: rgba(255,255,255,0.88);
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+
+  .answer-box strong { color: var(--pink-pale); }
+
+  .risk-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--red-alert);
+    color: white;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .preconisation-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--green-ok);
+    color: white;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-left: 6px;
+  }
+
+  /* ─── FOUR-MODE GRID ─── */
+  .modes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+  }
+
+  .mode-card {
+    background: var(--white);
+    border: 1px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 15px 16px;
+    border-top: 4px solid var(--pink-mid);
+    box-shadow: 0 2px 8px rgba(192,40,122,0.06);
+  }
+
+  .mode-card.recommended {
+    border-top-color: var(--green-ok);
+    background: linear-gradient(180deg, #F0FFF4 0%, white 40%);
+  }
+
+  .mode-card.danger-card {
+    border-top-color: var(--red-alert);
+    background: linear-gradient(180deg, #FFF8F8 0%, white 40%);
+  }
+
+  .mode-card.info-card {
+    border-top-color: var(--blue-link);
+    background: linear-gradient(180deg, #F0F4FF 0%, white 40%);
+  }
+
+  .mode-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin-bottom: 6px;
+  }
+
+  .mode-label.pink { background: var(--pink-pale); color: var(--pink-deep); }
+  .mode-label.green { background: #D8F5E0; color: var(--green-ok); }
+  .mode-label.red { background: #FFE8E8; color: var(--red-alert); }
+  .mode-label.blue { background: #E0EAFF; color: var(--blue-link); }
+
+  .mode-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--pink-bg);
+  }
+
+  .mode-body {
+    font-size: 11.5px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  .cite-tag {
+    display: inline-block;
+    background: var(--pink-bg);
+    border: 1px solid var(--pink-light);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 9.5px;
+    color: var(--pink-deep);
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 6px;
+  }
+
+  .mode-card.recommended .cite-tag {
+    background: #F0FFF4; border-color: #A0D8B0; color: #1E4A2A;
+  }
+
+  .mode-card.danger-card .cite-tag {
+    background: #FFF0F0; border-color: #E8A0A0; color: #7A1010;
+  }
+
+  .mode-card.info-card .cite-tag {
+    background: #F0F4FF; border-color: #A0B8E0; color: #1A3A7A;
+  }
+
+  /* ─── AFRITECH CASE BOX ─── */
+  .afritech-box {
+    background: linear-gradient(135deg, #2C0A1E 0%, #6A0A40 100%);
+    border-radius: 10px;
+    padding: 18px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .afritech-box::before {
+    content: 'AFRITECH';
+    position: absolute;
+    right: -10px; bottom: -10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    letter-spacing: 2px;
+  }
+
+  .afritech-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--pink-pale);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .afritech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .afritech-item {
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 12px 14px;
+    border-left: 3px solid;
+  }
+
+  .afritech-item.risk { border-color: #E88080; }
+  .afritech-item.ok { border-color: #80D890; }
+
+  .afritech-item-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .afritech-item.risk .afritech-item-label { color: #E88080; }
+  .afritech-item.ok .afritech-item-label { color: #80D890; }
+
+  .afritech-item p {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.5;
+  }
+
+  .afritech-item .cite {
+    font-size: 9.5px;
+    font-style: italic;
+    color: rgba(255,255,255,0.45);
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  /* ─── LEGAL TABLE ─── */
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(192,40,122,0.08);
+  }
+
+  .legal-table thead tr {
+    background: linear-gradient(90deg, var(--pink-deep), var(--pink-main));
+    color: white;
+  }
+
+  .legal-table thead th {
+    padding: 10px 13px;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .legal-table tbody tr:nth-child(even) { background: var(--pink-bg); }
+  .legal-table tbody tr:nth-child(odd) { background: var(--white); }
+
+  .legal-table tbody td {
+    padding: 9px 13px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--pink-pale);
+    line-height: 1.45;
+    color: var(--text-mid);
+  }
+
+  .source-cell {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: var(--pink-deep);
+    font-size: 10.5px;
+    white-space: nowrap;
+  }
+
+  .link-btn {
+    display: inline-block;
+    background: var(--pink-mid);
+    color: white;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+
+  /* ─── PRACTICAL GRID ─── */
+  .practical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .practical-card {
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid;
+  }
+
+  .practical-card.primary {
+    background: linear-gradient(135deg, var(--pink-deep) 0%, #8B1A5A 100%);
+    border-color: var(--pink-mid);
+  }
+
+  .practical-card.secondary {
+    background: var(--rose-white);
+    border-color: var(--grey-border);
+  }
+
+  .pcard-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+  }
+
+  .practical-card.primary .pcard-header { border-color: rgba(255,255,255,0.16); }
+  .practical-card.secondary .pcard-header { border-color: var(--grey-border); }
+
+  .pcard-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+
+  .practical-card.primary .pcard-icon { background: rgba(255,255,255,0.15); }
+  .practical-card.secondary .pcard-icon { background: var(--pink-pale); }
+
+  .pcard-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12.5px;
+    font-weight: 800;
+  }
+
+  .practical-card.primary .pcard-title { color: var(--pink-pale); }
+  .practical-card.secondary .pcard-title { color: var(--pink-deep); }
+
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+
+  .action-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .practical-card.primary .action-dot { background: var(--pink-light); }
+  .practical-card.secondary .action-dot { background: var(--pink-mid); }
+
+  .practical-card.primary .action-item { color: rgba(255,255,255,0.84); }
+  .practical-card.secondary .action-item { color: var(--text-mid); }
+
+  /* ─── COUNTRY CARDS ─── */
+  .country-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+    margin-top: 8px;
+  }
+
+  .country-card {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    border-top: 3px solid;
+  }
+
+  .country-card.mali { border-color: #009A00; }
+  .country-card.libye { border-color: #006E51; }
+
+  .country-name {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    color: var(--text-dark);
+  }
+
+  .country-body {
+    font-size: 11px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* ─── LIMITS BOX ─── */
+  .limits-box {
+    background: var(--pink-soft);
+    border: 1px dashed var(--grey-border);
+    border-radius: 8px;
+    padding: 15px 20px;
+  }
+
+  .limits-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .limit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+    color: var(--text-mid);
+  }
+
+  .limit-num {
+    background: var(--pink-mid);
+    color: white;
+    border-radius: 50%;
+    width: 18px; height: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--pink-light), transparent);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--text-dark);
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-langs {
+    display: flex;
+    gap: 14px;
+  }
+
+  .footer-lang {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+  }
+
+  .footer-lang strong { color: var(--pink-pale); }
+
+  .footer-actions { display: flex; gap: 10px; }
+
+  .footer-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .footer-btn.primary { background: var(--pink-mid); color: white; }
+  .footer-btn.outline {
+    background: transparent;
+    color: var(--pink-pale);
+    border: 1px solid var(--pink-light);
+  }
+
+  .footer-page { color: rgba(255,255,255,0.3); font-size: 10px; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="module-label">Module 5</div>
+    <div class="header-title-fr">Rompre un contrat de travail</div>
+    <div class="header-title-en">End an Employment Contract</div>
+    <div class="header-title-sub">Proceed respectfully and legally · Maîtriser les modes de rupture dans un contexte international</div>
+    <div class="header-title-ar">الإجراءات بشكل محترم قانوني</div>
+    <div class="lang-row">
+      <div class="lang-badge">🇫🇷 Français</div>
+      <div class="lang-badge">🇬🇧 English</div>
+      <div class="lang-badge">🇦🇪 العربية</div>
+    </div>
+    <div class="header-bar"></div>
+  </div>
+
+  <!-- SCENARIO BANNER -->
+  <div class="scenario-banner">
+    <div class="scenario-icon">📋</div>
+    <div class="scenario-text">
+      <strong>Cas pratique · AFRITECH</strong> — Rupture de période d'essai · Rupture conventionnelle · Licenciement personnel / économique · Négociation · Contexte international
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- 4 THEMES NUMBERED -->
+    <div class="steps-list">
+      <div class="step-row">
+        <div class="step-circle">1</div>
+        <div class="step-content">
+          <div class="step-left">
+            <div class="step-fr">Période d'essai</div>
+            <div class="step-en">Probation Period</div>
+          </div>
+          <div class="step-ar">قفرة النجرية</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">2</div>
+        <div class="step-content">
+          <div class="step-left">
+            <div class="step-fr">Rupture Conventionnelle</div>
+            <div class="step-en">Mutual Agreement</div>
+          </div>
+          <div class="step-ar">إنهاء يالتراضي</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">3</div>
+        <div class="step-content">
+          <div class="step-left">
+            <div class="step-fr">Licencier un salarié</div>
+            <div class="step-en">Dismiss an Employee</div>
+          </div>
+          <div class="step-ar">تسريح موظف</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">4</div>
+        <div class="step-content">
+          <div class="step-left">
+            <div class="step-fr">Négocier une rupture</div>
+            <div class="step-en">Negotiate a Termination</div>
+          </div>
+          <div class="step-ar">تفاوض على عقد العمل</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK ACCESS -->
+    <div class="quick-access">
+      <div class="qa-title">🔗 Accès Rapide | Quick Access | وصول سريع</div>
+      <div class="qa-items">
+        <div class="qa-item">
+          <div class="qa-item-icon">💬</div>
+          <div class="qa-item-text">
+            <strong>Forum | منتدى نتلف</strong>
+            <span>Discuter le cas pratique · Use the forum</span>
+          </div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-item-icon">✅</div>
+          <div class="qa-item-text">
+            <strong>Take the quiz (Module 5)</strong>
+            <span>الاختبار (الوحدة 5) · Passer le quiz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 1 -->
+    <div>
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">Réponse synthétique</div>
+      </div>
+
+      <div class="answer-box">
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+          <div class="risk-tag">⚠ Respect du fond ET de la forme</div>
+          <div class="preconisation-tag">✔ Rupture conventionnelle préconisée</div>
+        </div>
+        <div class="answer-verdict">Cause réelle et sérieuse (fond) + procédure contradictoire (forme) — La réalité de l'exécution prime sur le contrat formel</div>
+        <p>
+          La rupture du contrat est <strong>strictement encadrée</strong> en droit français : le fond exige une cause réelle et sérieuse ; la forme, une procédure contradictoire. Pour le chef de projet AFRITECH intervenant partiellement en France, les <strong>règles impératives françaises s'appliquent</strong> même si le contrat est de droit marocain. La <strong>rupture conventionnelle</strong> est le levier privilégié pour limiter l'aléa judiciaire et purger les griefs réciproques dans ce contexte.
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 2 -->
+    <div>
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">Raisonnement détaillé · 4 modes de rupture</div>
+      </div>
+
+      <div class="modes-grid">
+
+        <div class="mode-card">
+          <div class="mode-label pink">A · Rupture d'essai</div>
+          <div class="mode-title">Période d'essai : liberté sous condition</div>
+          <div class="mode-body">
+            La rupture est libre de motif mais impose un <strong>délai de prévenance croissant</strong> selon la durée de présence (de 24 h à 1 mois pour l'employeur). Le non-respect de ce délai n'annule pas la rupture, mais ouvre droit à une <strong>indemnité compensatrice</strong> à la charge de l'employeur.
+            <br><span class="cite-tag">Art. L1221-25</span>
+          </div>
+        </div>
+
+        <div class="mode-card recommended">
+          <div class="mode-label green">B · Mode recommandé</div>
+          <div class="mode-title">Rupture Conventionnelle : levier de sécurisation</div>
+          <div class="mode-body">
+            Unique mode de rupture amiable du CDI. Elle exige un <strong>consentement libre et éclairé</strong>, une indemnité au moins égale à l'indemnité légale et une <strong>homologation administrative</strong> (DREETS). Elle est possible même pendant une suspension du contrat (arrêt maladie).
+            <br><span class="cite-tag">Art. L1237-11 · Cass. soc. n° 13-16.297</span>
+          </div>
+        </div>
+
+        <div class="mode-card info-card">
+          <div class="mode-label blue">C · Licenciement</div>
+          <div class="mode-title">Motif personnel vs Motif économique</div>
+          <div class="mode-body">
+            <strong>Personnel :</strong> Faits objectifs + convocation + entretien préalable (délai 5 jours ouvrables) + notification motivée.<br><br>
+            <strong>Économique :</strong> Lié à l'entreprise (difficultés, réorganisation) + <strong>obligation de reclassement préalable</strong>. La simple fin d'un contrat de prestation ne suffit pas à justifier un licenciement économique.
+            <br><span class="cite-tag">Art. L1232-2 · Art. L1233-3 · Cass. soc. n° 08-44.059</span>
+          </div>
+        </div>
+
+        <div class="mode-card danger-card">
+          <div class="mode-label red">D · Analyse AFRITECH</div>
+          <div class="mode-title">Cas du chef de projet · Règles impératives françaises</div>
+          <div class="mode-body">
+            Si le lien avec la France est établi, les règles françaises (entretien préalable, cause réelle et sérieuse) s'imposent même sous contrat marocain. <strong>Absence de rapatriement ou de reclassement</strong> à la fin de mission = rupture aux torts de l'entreprise.
+            <br><span class="cite-tag">Cass. soc. n° 14-16.269 · n° 16-21.703 · n° 16-18.854</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AFRITECH CASE -->
+    <div class="afritech-box">
+      <div class="afritech-title">🎯 Préconisations · Cas AFRITECH</div>
+      <div class="afritech-grid">
+        <div class="afritech-item risk">
+          <div class="afritech-item-label">⚠ Risque majeur</div>
+          <p>Si la mission s'arrête sans rapatriement ni reclassement, l'employeur s'expose à une <strong>rupture aux torts de l'entreprise</strong> avec toutes les conséquences indemnitaires associées.</p>
+          <span class="cite">Cass. soc. n° 16-18.854</span>
+        </div>
+        <div class="afritech-item ok">
+          <div class="afritech-item-label">✔ Préconisation 1</div>
+          <p>Prioriser la <strong>Rupture Conventionnelle</strong> pour purger les griefs réciproques et sécuriser la séparation sans aléa judiciaire, avec homologation DREETS.</p>
+          <span class="cite">Art. L1237-11</span>
+        </div>
+        <div class="afritech-item ok">
+          <div class="afritech-item-label">✔ Préconisation 2</div>
+          <p>À défaut, envisager un <strong>licenciement économique</strong> si le poste est supprimé, avec une rédaction rigoureuse de la lettre précisant la cause économique réelle.</p>
+          <span class="cite">Cass. soc. n° 09-40.812</span>
+        </div>
+        <div class="afritech-item risk">
+          <div class="afritech-item-label">⚠ Barème Macron</div>
+          <p>En cas de licenciement sans cause réelle et sérieuse, le <strong>Barème Macron</strong> plafonne l'indemnité selon l'ancienneté. Outil d'évaluation du risque financier préalable.</p>
+          <span class="cite">Art. L1235-3</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 3 -->
+    <div>
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">Fondements juridiques</div>
+      </div>
+
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Contenu</th>
+            <th>Application AFRITECH</th>
+            <th>Réf.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="source-cell">C. trav., art. L1232-1</td>
+            <td>Tout licenciement doit être justifié par une cause réelle et sérieuse.</td>
+            <td>Condition de fond impérative pour le licenciement du chef de projet.</td>
+            <td><a class="link-btn" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019071126" target="_blank">↗ Legifrance</a></td>
+          </tr>
+          <tr>
+            <td class="source-cell">C. trav., art. L1237-11</td>
+            <td>Définit la rupture conventionnelle comme accord mutuel entre employeur et salarié.</td>
+            <td>Mode à privilégier pour sécuriser le départ du chef de projet AFRITECH.</td>
+            <td><a class="link-btn" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019071187" target="_blank">↗ Legifrance</a></td>
+          </tr>
+          <tr>
+            <td class="source-cell">Cass. soc. n° 14-16.269</td>
+            <td>Le choix d'une loi étrangère n'évince pas les règles impératives françaises si le lien avec la France est étroit.</td>
+            <td>Justifie l'application de la procédure française pour le cas AFRITECH.</td>
+            <td><a class="link-btn" href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000031407333" target="_blank">↗ Legifrance</a></td>
+          </tr>
+          <tr>
+            <td class="source-cell">Cass. soc. n° 16-18.854</td>
+            <td>Obligation de reclassement et de rapatriement pour un salarié dont la mission à l'étranger prend fin.</td>
+            <td>Risque de condamnation si AFRITECH ne propose pas de poste au retour du salarié.</td>
+            <td><a class="link-btn" href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000035853325" target="_blank">↗ Legifrance</a></td>
+          </tr>
+          <tr>
+            <td class="source-cell">C. trav., art. L1235-3</td>
+            <td>Barème Macron des indemnités en cas de licenciement sans cause réelle et sérieuse.</td>
+            <td>Permet au manager d'évaluer le risque financier en amont de toute décision.</td>
+            <td><a class="link-btn" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036762052" target="_blank">↗ Legifrance</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 4 -->
+    <div>
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">Conseils pratiques</div>
+      </div>
+
+      <div class="practical-grid">
+
+        <div class="practical-card primary">
+          <div class="pcard-header">
+            <div class="pcard-icon">👤</div>
+            <div class="pcard-title">Pour le Manager AFRITECH</div>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <span><strong style="color:var(--pink-pale)">Anticipation J−30 :</strong> Vérifier les clauses de mobilité et de rapatriement du contrat initial. Si le détachement était temporaire et que le contrat d'origine reprend, il n'y a pas de rupture à formaliser.</span>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <span><strong style="color:var(--pink-pale)">Procédure :</strong> En cas de licenciement, respecter scrupuleusement le délai de <strong>5 jours ouvrables</strong> pour l'entretien préalable. Une erreur de procédure coûte jusqu'à 1 mois de salaire.</span>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <span><strong style="color:var(--pink-pale)">Formalisme obligatoire :</strong> Remettre le <strong>certificat de travail</strong>, l'attestation France Travail et le reçu pour solde de tout compte le dernier jour travaillé.</span>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <span><strong style="color:var(--pink-pale)">Preuve :</strong> Pour insuffisance professionnelle, documenter par des faits précis (emails, rapports) pour sécuriser le motif.</span>
+          </div>
+        </div>
+
+        <div class="practical-card secondary">
+          <div class="pcard-header">
+            <div class="pcard-icon">🌍</div>
+            <div class="pcard-title">Dimension internationale</div>
+          </div>
+          <div class="country-row">
+            <div class="country-card mali">
+              <div class="country-name"><span>🇲🇱</span> Mali</div>
+              <div class="country-body">Le <strong>licenciement économique</strong> nécessite souvent l'avis préalable de l'Inspection du Travail. Procédure administrative préalable obligatoire avant toute rupture.</div>
+            </div>
+            <div class="country-card libye">
+              <div class="country-name"><span>🇱🇾</span> Libye</div>
+              <div class="country-body"><strong>Protection forte</strong> de l'emploi local. Une rupture peut exiger une <strong>conciliation préalable</strong> devant une commission administrative. Délais très contraignants.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LIMITS -->
+    <div class="limits-box">
+      <div class="limits-title">📌 Limites de l'analyse &amp; Questions complémentaires</div>
+      <div class="limit-item">
+        <div class="limit-num">1</div>
+        <span>L'<strong>ancienneté exacte</strong> du chef de projet n'est pas connue — le droit à l'indemnité légale de licenciement n'est acquis qu'après 8 mois de présence.</span>
+      </div>
+      <div class="limit-item">
+        <div class="limit-num">2</div>
+        <span>La <strong>convention collective applicable</strong> à AFRITECH n'a pas été fournie — elle pourrait prévoir des délais de prévenance ou des indemnités plus favorables que le Code du travail.</span>
+      </div>
+      <div class="limit-item">
+        <div class="limit-num">3</div>
+        <span>Les <strong>clauses de mobilité et de rapatriement</strong> du contrat initial ne sont pas connues — leur existence ou leur absence conditionne la qualification juridique de la fin de mission.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-langs">
+      <div class="footer-lang">🇫🇷 <strong>FR</strong> Transcription du cours</div>
+      <div class="footer-lang">🇬🇧 <strong>EN</strong> Course transcript</div>
+      <div class="footer-lang">🇦🇪 <strong>AR</strong> النسخة الدربية</div>
+    </div>
+    <div class="footer-actions">
+      <button class="footer-btn outline">💬 Forum · Cas pratique</button>
+      <button class="footer-btn primary">✅ Take the quiz →</button>
+    </div>
+    <div class="footer-page">Module 5 · Unité 5</div>
+  </div>
+
+</div>
+
+</body>
+</html>
